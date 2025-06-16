@@ -24,34 +24,60 @@ int	main(int ac, char **av)
 	double	Hours_per_day_percent = Hours_per_week_percent / atoi(av[5]);
 	double	Hours_per_day_PH_percent = Hours_per_week_PH_percent / atoi(av[5]);
 
+
+	// Conversion for Total Hours in minutes
+	double	Total_Hours_conversion_m = (Total_Hours - (int)Total_Hours) * 60;
+	double	Total_Hours_PH_conversion_m = (Total_Hours_PH - (int)Total_Hours_PH) * 60;
+	double	Total_Hours_percent_conversion_m = (Total_Hours_percent - (int)Total_Hours_percent) * 60;
+	double	Total_Hours_PH_percent_conversion_m = (Total_Hours_PH_percent - (int)Total_Hours_PH_percent) * 60;
+
 	// Conversion for HPW in minutes
-	double	Hours_per_week_conversion = (Hours_per_week - (int)Hours_per_week) * 60;
-	double	Hours_per_week_PH_conversion = (Hours_per_week_PH - (int)Hours_per_week_PH) * 60;
-	double	Hours_per_week_percent_conversion = (Hours_per_week_percent - (int)Hours_per_week_percent) * 60;
-	double	Hours_per_week_PH_percent_conversion = (Hours_per_week_PH_percent - (int)Hours_per_week_PH_percent) * 60;
+	double	Hours_per_week_conversion_m = (Hours_per_week - (int)Hours_per_week) * 60;
+	double	Hours_per_week_PH_conversion_m = (Hours_per_week_PH - (int)Hours_per_week_PH) * 60;
+	double	Hours_per_week_percent_conversion_m = (Hours_per_week_percent - (int)Hours_per_week_percent) * 60;
+	double	Hours_per_week_PH_percent_conversion_m = (Hours_per_week_PH_percent - (int)Hours_per_week_PH_percent) * 60;
 
 	// Conversion for HPD in minutes
-	double	Hours_per_day_conversion = (Hours_per_day - (int)Hours_per_day) * 60;
-	double	Hours_per_day_PH_conversion = (Hours_per_day_PH - (int)Hours_per_day_PH) * 60;
-	double	Hours_per_day_percent_conversion = (Hours_per_day_percent - (int)Hours_per_day_percent) * 60;
-	double	Hours_per_day_PH_percent_conversion = (Hours_per_day_PH_percent - (int)Hours_per_day_PH_percent) * 60;
+	double	Hours_per_day_conversion_m = (Hours_per_day - (int)Hours_per_day) * 60;
+	double	Hours_per_day_PH_conversion_m = (Hours_per_day_PH - (int)Hours_per_day_PH) * 60;
+	double	Hours_per_day_percent_conversion_m = (Hours_per_day_percent - (int)Hours_per_day_percent) * 60;
+	double	Hours_per_day_PH_percent_conversion_m = (Hours_per_day_PH_percent - (int)Hours_per_day_PH_percent) * 60;
+
+
+	// Conversion for Total Hours in seconds
+	double	Total_Hours_conversion_s = (Total_Hours_conversion_m - (int)Total_Hours_conversion_m) * 60;
+	double	Total_Hours_PH_conversion_s = (Total_Hours_PH_conversion_m - (int)Total_Hours_PH_conversion_m) * 60;
+	double	Total_Hours_percent_conversion_s = (Total_Hours_percent_conversion_m - (int)Total_Hours_percent_conversion_m) * 60;
+	double	Total_Hours_PH_percent_conversion_s = (Total_Hours_PH_percent_conversion_m - (int)Total_Hours_PH_percent_conversion_m) * 60;
+
+	// Conversion for HPW in seconds
+	double	Hours_per_week_conversion_s = (Hours_per_week_conversion_m - (int)Hours_per_week_conversion_m) * 60;
+	double	Hours_per_week_PH_conversion_s = (Hours_per_week_PH_conversion_m - (int)Hours_per_week_PH_conversion_m) * 60;
+	double	Hours_per_week_percent_conversion_s = (Hours_per_week_percent_conversion_m - (int)Hours_per_week_percent_conversion_m) * 60;
+	double	Hours_per_week_PH_percent_conversion_s = (Hours_per_week_PH_percent_conversion_m - (int)Hours_per_week_PH_percent_conversion_m) * 60;
+
+	// Conversion for HPD in seconds
+	double	Hours_per_day_conversion_s = (Hours_per_day_conversion_m - (int)Hours_per_day_conversion_m) * 60;
+	double	Hours_per_day_PH_conversion_s = (Hours_per_day_PH_conversion_m - (int)Hours_per_day_PH_conversion_m) * 60;
+	double	Hours_per_day_percent_conversion_s = (Hours_per_day_percent_conversion_m - (int)Hours_per_day_percent_conversion_m) * 60;
+	double	Hours_per_day_PH_percent_conversion_s = (Hours_per_day_PH_percent_conversion_m - (int)Hours_per_day_PH_percent_conversion_m) * 60;
 
 	// Total Hours
-	printf("Total Hours:\t\t\t\t\t\t\t\t\t%f\th\n", Total_Hours);
-	printf("Total Hours with public holidays:\t\t\t\t\t\t%f\th\n", Total_Hours_PH);
-	printf("Total Hours for %i%%:\t\t\t\t\t\t\t\t%f\th\n", atoi(av[4]), Total_Hours_percent);
-	printf("Total Hours with public holidays for %i%% percent:\t\t\t\t%f\th\n\n", atoi(av[4]), Total_Hours_PH_percent);
+	printf("Total Hours:\t\t\t\t\t\t\t\t\t%f h\tbeing %i h %i m %f s\n", Total_Hours, (int)Total_Hours, (int)Total_Hours_conversion_m, Total_Hours_conversion_s);
+	printf("Total Hours with public holidays:\t\t\t\t\t\t%f h\tbeing %i h %i m %f s\n", Total_Hours_PH, (int)Total_Hours_PH, (int)Total_Hours_PH_conversion_m, Total_Hours_PH_conversion_s);
+	printf("Total Hours for %i%%:\t\t\t\t\t\t\t\t%f h\tbeing %i h %i m %f s\n", atoi(av[4]), Total_Hours_percent, (int)Total_Hours_percent, (int)Total_Hours_percent_conversion_m, Total_Hours_percent_conversion_s);
+	printf("Total Hours with public holidays for %i%% percent:\t\t\t\t%f h\tbeing %i h %i m %f s\n\n", atoi(av[4]), Total_Hours_PH_percent, (int)Total_Hours_PH_percent, (int)Total_Hours_PH_percent_conversion_m, Total_Hours_PH_percent_conversion_s);
 
 	// Hours per week
-	printf("Hours per week:\t\t\t\t\t\t\t\t\t%f\th\tbeing %i h %f m\n", Hours_per_week, (int)Hours_per_week, Hours_per_week_conversion);
-	printf("Hours per week with public holidays:\t\t\t\t\t\t%f\th\tbeing %i h %f m\n", Hours_per_week_PH, (int)Hours_per_week_PH, Hours_per_week_PH_conversion);
-	printf("Hours per week for %i%%:\t\t\t\t\t\t\t\t%f\th\tbeing %i h %f m\n", atoi(av[4]), Hours_per_week_percent, (int)Hours_per_week_percent, Hours_per_week_percent_conversion);
-	printf("Hours per week with public holidays for %i%%:\t\t\t\t\t%f\th\tbeing %i h %f m\n\n", atoi(av[4]), Hours_per_week_PH_percent, (int)Hours_per_week_PH_percent, Hours_per_week_PH_percent_conversion);
+	printf("Hours per week:\t\t\t\t\t\t\t\t\t%f h\tbeing %i h %i m %f s\n", Hours_per_week, (int)Hours_per_week, (int)Hours_per_week_conversion_m, Hours_per_week_conversion_s);
+	printf("Hours per week with public holidays:\t\t\t\t\t\t%f h\tbeing %i h %i m %f s\n", Hours_per_week_PH, (int)Hours_per_week_PH, (int)Hours_per_week_PH_conversion_m, Hours_per_week_PH_conversion_s);
+	printf("Hours per week for %i%%:\t\t\t\t\t\t\t\t%f h\tbeing %i h %i m %f s\n", atoi(av[4]), Hours_per_week_percent, (int)Hours_per_week_percent, (int)Hours_per_week_percent_conversion_m, Hours_per_week_percent_conversion_s);
+	printf("Hours per week with public holidays for %i%%:\t\t\t\t\t%f h\tbeing %i h %i m %f s\n\n", atoi(av[4]), Hours_per_week_PH_percent, (int)Hours_per_week_PH_percent, (int)Hours_per_week_PH_percent_conversion_m, Hours_per_week_PH_percent_conversion_s);
 
 	// Hours per day
-	printf("Hours per day for %i work days per week: \t\t\t\t\t%f\th\tbeing %i h %f m\n", atoi(av[5]), Hours_per_day, (int)Hours_per_day, Hours_per_day_conversion);
-	printf("Hours per day for %i work days per week with the puclic holidays: \t\t%f\th\tbeing %i h %f m\n", atoi(av[5]), Hours_per_day_PH, (int)Hours_per_day_PH, Hours_per_day_PH_conversion);
-	printf("Hours per day for %i work days per week for %i%%: \t\t\t\t%f\th\tbeing %i h %f m\n", atoi(av[5]), atoi(av[4]), Hours_per_day_percent, (int)Hours_per_day_percent, Hours_per_day_percent_conversion);
-	printf("Hours per day for %i work days per week with the puclic holidays for %i%%: \t%f\th\tbeing %i h %f m\n", atoi(av[5]), atoi(av[4]), Hours_per_day_PH_percent, (int)Hours_per_day_PH_percent, Hours_per_day_PH_percent_conversion);
+	printf("Hours per day for %i work days per week: \t\t\t\t\t%f h\tbeing %i h %i m %f s\n", atoi(av[5]), Hours_per_day, (int)Hours_per_day, (int)Hours_per_day_conversion_m, Hours_per_day_conversion_s);
+	printf("Hours per day for %i work days per week with the puclic holidays: \t\t%f h\tbeing %i h %i m %f s\n", atoi(av[5]), Hours_per_day_PH, (int)Hours_per_day_PH, (int)Hours_per_day_PH_conversion_m, Hours_per_day_PH_conversion_s);
+	printf("Hours per day for %i work days per week for %i%%: \t\t\t\t%f h\tbeing %i h %i m %f s\n", atoi(av[5]), atoi(av[4]), Hours_per_day_percent, (int)Hours_per_day_percent, (int)Hours_per_day_percent_conversion_m, Hours_per_day_percent_conversion_s);
+	printf("Hours per day for %i work days per week with the puclic holidays for %i%%: \t%f h\tbeing %i h %i m %f s\n", atoi(av[5]), atoi(av[4]), Hours_per_day_PH_percent, (int)Hours_per_day_PH_percent, (int)Hours_per_day_PH_percent_conversion_m, Hours_per_day_PH_percent_conversion_s);
 	return (0);
 }
